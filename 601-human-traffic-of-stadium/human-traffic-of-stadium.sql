@@ -14,8 +14,7 @@ from
         where
             s.people >= 100
     ) as t
-where
-    (t.id - row_n) in 
+    join 
     (
         select
             tt.nn
@@ -39,4 +38,4 @@ where
             tt.nn
         having 
             count(id) >= 3
-    )
+    ) as ttt on (t.id - row_n) = ttt.nn
